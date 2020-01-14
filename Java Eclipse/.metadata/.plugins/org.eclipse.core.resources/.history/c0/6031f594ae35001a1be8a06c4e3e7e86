@@ -1,0 +1,84 @@
+package J1SP0065;
+
+public class Student {
+    private String name;
+    private String Class;
+    private double Math;
+    private double Physyal;
+    private double Chemistry;
+    private double Average;
+    private String type;
+
+    public Student(String name, String class1, double math, double physyal, double chemistry,
+                    double average, String type) {
+	super();
+	this.name = name;
+	Class = class1;
+	Math = math;
+	Physyal = physyal;
+	Chemistry = chemistry;
+	Average = average;
+	this.type = type;
+    }
+
+    public Student() {
+	super();
+    }
+
+    public String getName() {
+	return name;
+    }
+
+    public void setName(String name) {
+	this.name = name;
+    }
+
+    public String getCLass() {
+	return Class;
+    }
+
+    public void setClass(String class1) {
+	Class = class1;
+    }
+
+    public double getMath() {
+	return Math;
+    }
+
+    public void setMath(double math) {
+	Math = math;
+    }
+
+    public double getPhysyal() {
+	return Physyal;
+    }
+
+    public void setPhysyal(double physyal) {
+	Physyal = physyal;
+    }
+
+    public double getChemistry() {
+	return Chemistry;
+    }
+
+    public void setChemistry(double chemistry) {
+	Chemistry = chemistry;
+    }
+
+    public double getAverage() {
+	return Average;
+    }
+
+    public void setAverage(double average) {
+	Average = average;
+    }
+
+    public String getType() {
+	return type;
+    }
+
+    public void setType(String type) {
+	this.type = type;
+    }
+
+}

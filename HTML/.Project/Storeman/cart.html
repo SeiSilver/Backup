@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+		
+		<!-- For IE 8 and older>
+		<!--[if lt IE 9]>
+            <script src="http://github.com/aFarkas/html5shiv/blob/master/dist/html5shiv.js"></script>
+        <![endif]-->
+		
+        <link rel="stylesheet" href="style_cart.css" />
+		
+		<!-- For IE 7 and older>
+		<!--[if lte IE 7]>
+			<link rel="stylesheet" href="style_ie.css" />
+        <![endif]-->
+		
+        <title>Cart</title>
+    </head>
+
+    <body>
+		<!-- Header -->
+        <header>
+			<div id="header-top">
+				<!-- Search form -->
+				<div id="search-form">
+					<form action="search.php" method="get">
+						<input type="text" name="q" id="q" class="search-field" placeholder="What are you looking for?"/> 
+						<input type="submit" class="search-button" id="seek" value="" />
+					</form>
+				</div>
+						
+				<!-- Right part of the header -->
+				<div id="header-right">	 	
+					<select id="language-switcher">
+						<option value="1">English</option>
+						<option value="2">Dutch</option>
+					</select>
+					<select id="currency-picker">
+						<option value="EUR" >EUR</option>
+						<option value="GBP" >GBP</option>
+						<option value="USD" >USD</option>
+						<option value="CAD" >CAD</option>
+						<option value="AUD" >AUD</option>
+						<option value="JPY" >JPY</option>
+						<option value="SEK" >SEK</option>
+					</select>
+					<a class="cart" href="#" title="Cart"></a>
+				</div>
+				
+				<div id="menu">
+						<!-- Navigation -->
+						<label id="collapse" for="_1">
+							<img id="menuphoto" src="images/menu.svg"/>
+						</label>
+						<input id="_1" type="checkbox" name="mycheckbox"/>	
+						<ul id="mainmenu">
+							<li class="submenu">  
+								<a href="#"" title="Store">Store</a>
+							</li>
+							<li class="submenu">
+								<a href="#" title="Blog">Blog</a>
+							</li>
+							<li class="submenu" id="logoset">
+								<a href="#">
+									<img id="logo" src="images/logo.svg"/> <br/> 
+								</a>
+							</li>
+							<li class="submenu">
+								<a href="#" title="Our Story">Our Story</a>
+							</li>
+							<li class="submenu">
+								<a href="#" title="Contact">Contact</a>
+							</li>
+						</ul>
+						<div id="mobilelogobox">
+							<a href="#">
+								<img id="mobilelogo" src="images/logo.svg"/> <br/> 
+							</a>
+						</div>
+				</div>
+			</div>	
+        </header>
+		
+		<!-- Content -->
+		<div id="content">
+			<div class="wrapper">
+				<div class="section-header">
+					<h1>Cart</h1>
+					<div id="section-header-right">
+						<a href="#">Shipping & Payment</a>
+						<a href="mailto:info@concrete-matter.com">Contact us</a>
+					</div>
+				</div>
+				<!-- Being table -->
+				<table>
+					<thead>
+						<tr>
+							<th colspan="2">Item</th>
+							<th class="price">Price</th>
+							<th class="quantity">Quantity</th>
+							<th>Remove?</th>
+							<th>Total</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="pic">
+								<a href="#"><img src="images/item7_small.jpg" alt="Swiss Army Backpack" /></a>
+							</td>
+							<td class="title">
+								<a href="#">Swiss Army Backpack</a>
+							</td>
+							<td class="price">&euro;95.00</td>
+							<td class="quantity"><input type="text" class="field" name="updates" id="updates" value="1" /></td>
+							<td class="remove"><a href="#"></a></td>
+							<td class="total">&euro;95.00</td>
+						</tr>
+						<tr>
+							<td class="pic">
+								<a href="#"><img src="images/item1_small.png" alt="Randolph Aviator Gold AGX" /></a>
+							</td>
+							<td class="title">
+								<a href="#">Randolph Aviator Gold AGX - 52mm</a>
+							</td>
+							<td class="price">&euro;175.00</td>
+							<td class="quantity"><input type="text" class="field" name="updates" id="updates" value="1" /></td>
+							<td class="remove"><a href="#"></a></td>
+							<td class="total">&euro;175.00</td>
+						</tr>
+					</tbody>
+					<tfoot>		
+						<tr>
+							<td colspan="2"> </td>
+							<td class="hidden" colspan="2"> </td>
+							<td id="item_total">Item total:</td>
+							<td id="sub_total">&euro;270.00</td>
+						</tr>										
+						<tr>
+							<td colspan="2"> </td>
+							<td class="hidden" colspan="2"> </td>
+							<td id="total">Total:</td>
+							<td id="final_total">&euro;270.00</td>
+						</tr>
+					</tfoot>
+				</table>
+				<!-- End table -->
+	
+				<!-- Begin checkout -->
+				<div id="checkout">
+					<div id="checkout-buttons">
+						<p>We accept the following payment methods:</p>
+						<img src="images/payment_methods.png" />
+						<button type="submit" name="checkout">Proceed to checkout</button>
+					</div>
+				</div> 
+					<!-- End checkout-->			
+			</div>
+		</div>
+		
+		<!-- Footer -->
+		<footer>
+			<div class="wrapper">                   
+                <div class="column">               
+					<div class="icons" id="question"><img src="images/question.png"/></div>
+					<div class="text_footer">
+						<h4>Got any questions?</h4>                    
+						<p class="links">
+							<a href="mailto:info@concrete-matter.com">info@concrete-matter.com</a><br>
+							+ 31 20 261 09 33 
+						</p>
+					</div>
+                </div>
+                <div class="column">
+                    <div class="icons" id="friend"><img src="images/friend.png"/></div>
+					<div class="text_footer">
+						<h4>Let's be friends...</h4>                    
+						<div id="social-links">
+							<a href="#" target="_blank" title="Facebook"><img src="images/facebook.png"/></a>
+							<a href="#" target="_blank" title="Twitter"><img src="images/twitter.png"/></a>
+							<a href="#" target="_blank" title="Tumblr"><img src="images/tumblr.png"/></a>
+							<a href="#" target="_blank" title="Instagram"><img src="images/instagram.png"/></a>
+							<a href="#" target="_blank" title="Pinterest"><img src="images/pinterest.png"/></a>
+						</div>   
+					</div>
+                </div>
+                <div class="column">
+                    <div class="icons" id="news"><img src="images/news.png"/></div>
+					<div class="text_footer">
+						<h4>Join our newsletter!</h4>                    
+						<form action="newsletter.php" method="post" id="subscribe-form" name="subscribe-form">
+							<input type="email" value="" name="mail" id="mail" placeholder="Enter your e-mail address"/><button type="submit" name="subscribe" id="subscribe">Sign up</button>
+						</form>
+					</div>
+                </div>
+				<hr>
+                <div class="column">
+					<div class="icons" id="visit"><img src="images/visit.png"/></div>
+					<div class="text_footer">
+						<h4>Visit our store</h4>                    
+						<p>	
+							Haarlemmerdijk 127<br/>
+							1013 KE, Amsterdam<br/>                            
+							The Netherlands<br/>
+							+ 31 20 261 09 33
+						</p>
+					</div>
+                </div>
+                <div class="column">
+					<div class="icons" id="navigate"><img src="images/navigate.png"/></div>
+					<div class="text_footer">
+						<h4>Navigate</h4> 
+						<p class="links">
+							<a href="#" title="Store" >Store</a><br/>		      
+							<a href="#" title="Our Story" >Our Story</a><br/>
+							<a href="#" title="Blog" >Blog</a><br/>
+							<a href="#" title="Contact" >Contact</a>
+						</p>
+					</div>
+                </div>
+                <div class="column">
+					<div class="icons" id="gift"><img src="images/gift.png"/></div>
+					<div class="text_footer">
+						<h4>Gifts & Gift Cards</h4>                   
+						<p class="links">						
+							<a href="#" title="Below €25" >Below €25</a><br/>
+							<a href="#" title="€25 to €75" >€25 to €75</a><br/>
+							<a href="#" title="€75 to €150" >€75 to €150</a><br/>		      	                            
+							<a href="#" title="€150 and up" >€150 and up</a><br/> 
+							<a href="#" title="Gift Cards" >Gift Cards</a>
+						</p>
+					</div>
+                </div>
+                <div class="column">    
+					<div class="icons" id="hour"><img src="images/hour.png"/></div>
+					<div class="text_footer">
+						<h4>Store Hours</h4>                   
+						<table>
+	                        <tbody>
+	                          	<tr>
+	                          		<td>Monday</td>
+	                          		<td>13 - 18</td>
+	                          	</tr>
+	                          	<tr>
+	                          		<td>Tues. - Sat.</td>
+	                          		<td>10 - 18</td>
+	                          	</tr>
+	                          	<tr>
+	                          		<td>Sunday</td>
+	                          		<td>12 - 17</td>
+	                          	</tr>
+	                        </tbody>
+                        </table>
+					</div>
+                </div>
+                <div class="column">
+					<div class="icons" id="customer"><img src="images/customer.png"/></div>
+					<div class="text_footer">
+						<h4>Customer Service</h4>
+						<p class="links">
+							<a href="#" title="Shipping & Returns" >Shipping & Returns</a><br/>		      
+							<a href="#" title="Gift Cards" >Gift Cards</a><br/>
+							<a href="#" title="Contact us" >Contact us</a>
+						</p>
+					</div>
+                </div>
+                <div class="column">
+					<div class="icons" id="payment"><img src="images/payment.png"/></div>
+					<div class="text_footer">
+						<h4>Payment Methods</h4>
+						<p>	
+							Visa, Mastercard, American Express<br/>
+							Paypal<br/>
+							iDEAL (Dutch payments only)<br/>
+							Bancontact / Mister Cash
+						</p>
+					</div>
+                </div>
+				<hr>        
+				<div id="footer_left">© Concrete Matter - 2015</div>
+				<div id="footer_right">COC / KVK Nº: 62459171  •  VAT / BTW Nº: NL854826129B01</div>
+
+			</div>
+                    
+		</footer>
+        <script src="js/jquery-1.11.3.js"></script>		
+    </body>
+</html>

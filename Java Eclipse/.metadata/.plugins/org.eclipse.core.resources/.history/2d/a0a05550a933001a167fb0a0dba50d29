@@ -1,0 +1,114 @@
+package Core;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static Scanner sc = new Scanner(System.in);
+
+    public static void pause() {
+	System.out.println("\nPress Enter to continue.");
+	sc.nextLine();
+    }
+
+    public static void main(String[] args) {
+	// TODO Auto-generated method stub
+	Manager m = new Manager();
+
+	int choice = 0;
+	do {
+	    m.menu();
+	    choice = Validation.checkInt();
+	    switch (choice) {
+	    case 1:
+		m.addToHead();
+		break;
+	    case 2:
+		m.addToLast();
+		break;
+	    case 3:
+		m.addAfterFunction();
+		break;
+	    case 4:
+		m.MyList.traverse();
+		break;
+	    case 5:
+		m.deleteFromHead();
+		break;
+	    case 6:
+		m.deleteFromTail();
+		break;
+	    case 7:
+		m.deleteAfterFunction();
+		break;
+	    case 8:
+		m.deleteIfequal();
+		break;
+	    case 9:
+		m.searchFunc();
+		break;
+
+	    case 10:
+		m.countFunc();
+
+		break;
+	    case 11:
+		m.deleAtFunc();
+		break;
+	    case 12:
+		m.sortFunction();
+		break;
+	    case 13:
+		m.deleteNode();
+		break;
+	    case 14:
+
+		break;
+	    case 15:
+
+		break;
+	    case 16:
+
+		break;
+	    case 17:
+
+		break;
+	    case 18:
+
+		break;
+	    case 19:
+
+		break;
+
+	    case 20:
+		break;
+
+	    case 21:
+
+		break;
+	    case 22:
+
+		break;
+	    case 23:
+
+		break;
+	    case 24:
+
+		break;
+	    case 25:
+
+		break;
+	    case 26:
+
+		break;
+
+	    default:
+		System.out.println("Invalid selection");
+		break;
+
+	    }
+	    if (choice != 26) pause();
+	} while (choice != 26);
+    }
+
+}

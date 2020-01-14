@@ -1,0 +1,53 @@
+header {
+    background-color: rgb(173, 166, 166);
+    text-align: center;
+}
+
+header h1 {
+    text-align: center;
+    font-size: 30px;
+    color: rgb(245, 245, 35);
+}
+
+header nav a {
+    text-align: center;
+    background-color: rgb(173, 173, 161);
+    font-size: 25px;
+}
+
+.left {
+    /* display: none; */
+    float: left;
+    width: 20%;
+    height: 100vh;
+    background-color: aqua;
+    text-align: center;
+    margin: 2% 0 0 0;
+}
+
+.left a img {
+    padding: 10px 0 10px 0;
+    /* display: none; */
+    /* float: left; */
+    /* max-width: 50%;
+    max-height: 50%; */
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+}
+
+.right {
+    display: block;
+    float: right;
+    background-color: rgb(173, 166, 166);
+    font-size: larger;
+    font-weight: 800;
+    /* font-weight: inherit; */
+    margin-top: 2%;
+    width: 80%;
+}
+
+.right h2 {
+    font-size: 50px;
+    color: rgb(138, 130, 130);
+}

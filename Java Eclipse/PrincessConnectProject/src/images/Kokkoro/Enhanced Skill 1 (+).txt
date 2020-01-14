@@ -1,0 +1,2 @@
+Tri-slash (+)
+Gây DMG vật lý (trung bình) lên một kẻ địch ở phía trước, đồng thời tự buff ATK vật lý (trung bình), 15 TP gain cho bản thân trong 12s

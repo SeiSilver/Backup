@@ -1,0 +1,2 @@
+Abyss Burst
+Gây DMG phép (lớn) lên toàn bộ team địch, đồng thời gây trạng thái khủng hoảng (fear) lên đối phương

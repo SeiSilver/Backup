@@ -1,0 +1,41 @@
+{
+  "folders": [
+    {
+      "name": "C",
+      "path": "C"
+    },
+    {
+      "name": "C++",
+      "path": "C++"
+    },
+    {
+      "name": "java",
+      "path": "java"
+    },
+    {
+      "name": "java netbean",
+      "path": "java netbean"
+    }
+  ],
+  "settings": {
+    "files.associations": {
+      "math.h": "c",
+      "type_traits": "c",
+      "conio.h": "c",
+      "*.tcc": "c",
+      "istream": "c",
+      "ostream": "c",
+      "streambuf": "c",
+      "string_view": "c",
+      "typeinfo": "c",
+      "OOP.C": "cpp",
+      "stdlib.h": "c",
+      "iostream": "cpp",
+      "random": "cpp",
+      "chrono": "cpp",
+      "limits": "cpp",
+      "valarray": "cpp",
+      "cmath": "cpp"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+package Core;
+
+public class Stack {
+    private int data;
+    private String[] list;
+
+}

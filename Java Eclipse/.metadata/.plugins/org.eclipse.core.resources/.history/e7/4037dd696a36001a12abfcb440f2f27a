@@ -1,0 +1,20 @@
+package Core;
+
+public class Stack {
+    private int data;
+    private String[] list;
+
+    public Stack(int data) {
+	if (data < 0) throw new IllegalArgumentException();
+	list = new String[data];
+	this.data = 0;
+    }
+
+    public Stack() {
+    }
+
+    public void push() {
+
+    }
+
+}

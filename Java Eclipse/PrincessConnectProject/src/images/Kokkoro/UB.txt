@@ -1,0 +1,2 @@
+Aurora
+Buff ATK vật lý, ATK phép (nhỏ) cho toàn bộ đồng đội trong 18s, đồng thời tự hồi HP lượng (nhỏ) cho bản thân

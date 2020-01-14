@@ -1,0 +1,49 @@
+package Core;
+
+interface Hinhhoc {
+    public int n = 5;
+
+    public double EnterRadius(int n);
+
+    public double TinhChuVi();
+
+    public double TinhDienTich();
+
+    public void PrintRes();
+}
+
+public class Main implements Hinhhoc {
+
+    public static void main(String[] args) {
+	Main m = new Main();
+	m.EnterRadius(n);
+	m.PrintRes();
+	System.out.println(n);
+
+    }
+
+    @Override
+    public double EnterRadius(int x) {
+	n = x;
+	return x;
+    }
+
+    @Override
+    public double TinhChuVi() {
+	return Math.PI * EnterRadius(n) * 2;
+
+    }
+
+    @Override
+    public double TinhDienTich() {
+	return Math.PI * Math.pow(EnterRadius(n), 2);
+
+    }
+
+    @Override
+    public void PrintRes() {
+	System.out.println("Chu vi: " + TinhChuVi());
+	System.out.println("Dien tich: " + TinhDienTich());
+    }
+
+}

@@ -1,0 +1,34 @@
+a {
+    text-decoration: none;
+    color: #b948aa;
+    text-align: left;
+}
+
+header {
+    background: #cccccc;
+}
+
+nav {
+    text-decoration: none;
+    background: rgb(119, 94, 94);
+    color: rgba(255, 0, 255, 0.322);
+    text-align: left;
+}
+
+h1 {
+    text-align: center;
+    color: #0105ff;
+    ;
+}
+
+h2 {
+    color: #ffff0f;
+}
+
+section {
+    background: rgb(119, 94, 94);
+}
+
+img {
+    display: none;
+}

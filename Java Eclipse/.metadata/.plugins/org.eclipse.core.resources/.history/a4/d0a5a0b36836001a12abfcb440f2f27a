@@ -1,0 +1,22 @@
+package Core;
+
+import java.util.ArrayList;
+
+public class Stack {
+//    private String data;
+    private ArrayList<String> list = new ArrayList<String>();
+
+    public Stack() {
+    }
+
+//    public Stack(String data) {
+//	
+//    }
+
+    void push(String data) {
+	for (String string : list) {
+
+	}
+    }
+
+}

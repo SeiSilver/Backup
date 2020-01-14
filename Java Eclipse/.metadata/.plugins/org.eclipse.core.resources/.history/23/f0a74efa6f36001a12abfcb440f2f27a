@@ -1,0 +1,39 @@
+package Core;
+
+import MyLinkedList.MyLinkedList;
+
+public class LinkedListStack {
+    private MyLinkedList list = new MyLinkedList();
+
+    public LinkedListStack() {
+    }
+
+    public void push(String value) {
+	list.addFirst(value);
+	count++;
+    }
+
+    public void display() {
+	System.out.print("Array List: ");
+//	for (String i : list) {
+//	    System.out.println(i);
+//	}
+	list.deleteFirst()
+    }
+
+//    private int count = -1;
+
+//    public String peek() {
+//
+//	return list.get(count++);
+//    }
+//
+//    public String pop() {
+//	count--;
+//	return list.get(count + 1);
+//    }
+
+    boolean isEmpty() {
+	return list.isEmpty();
+    }
+}

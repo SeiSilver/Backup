@@ -1,0 +1,40 @@
+package Core;
+
+import java.util.ArrayList;
+import java.util.EmptyStackException;
+
+public class Stack {
+    private int c;
+    private ArrayList<String> list = new ArrayList<String>();
+
+    public Stack() {
+    }
+
+//    public Stack(String data) {
+//	
+//    }
+
+    void push(String data) {
+	for (String i : list) {
+	    if (i.equalsIgnoreCase(data)) {
+		System.err.println("This data array exist!");
+		return;
+	    }
+	}
+	list.add(data);
+    }
+
+    void display() {
+	System.out.print("Array List: ");
+//	for (String i : list) {
+//	    System.out.print(i);
+//	}
+	System.out.println(list);
+    }
+    
+    int peek() {
+	if (list.isEmpty()) throw new EmptyStackException();
+	return c++;
+    }
+
+}

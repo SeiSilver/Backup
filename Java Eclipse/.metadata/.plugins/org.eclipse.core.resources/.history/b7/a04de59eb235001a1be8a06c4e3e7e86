@@ -1,0 +1,118 @@
+package J1SP0065;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class Main {
+
+    public static Scanner sc = new Scanner(System.in);
+
+    public void menu() {
+	System.out.println("======================= MENU =========================");
+	System.out.printf("| 1. %-47s |\n", "Create Student");
+	System.out.printf("| 2. %-47s |\n", "Display");
+	System.out.printf("| 3. %-47s |\n", "Exit");
+	System.out.println("======================================================");
+	System.out.print("Choose option: ");
+    }
+
+    public void create(ArrayList<Student> list) {
+	while (true) {
+	    System.out.print("Name: ");
+	    String name = Validation.checkInputString();
+	    System.out.print("Class: ");
+	    String Class = Validation.checkInputString();
+	    System.out.print("Maths: ");
+	    double math = Validation.checkDouble();
+	    System.out.print("Chemistry: ");
+	    double Chemistry = Validation.checkDouble();
+	    System.out.print("Physics: ");
+	    double Physics = Validation.checkDouble();
+
+	    double average = (math + Chemistry + Physics) / 3;
+
+	    String type = "";
+	    if (average >= 7.5) type = "A";
+	    else if (average >= 6) type = "B";
+	    else if (average >= 4) type = "C";
+	    else type = "D";
+
+	    list.add(new Student(name, Class, math, Physics, Chemistry, average, type));
+	    if (Validation.checkInputYN()) { return; }
+	}
+    }
+
+    public void display(ArrayList<Student> list) {
+	for (Student i : list) {
+	    System.out.println("Name: " + i.getName());
+	    System.out.println("Classes: " + i.getName());
+	    System.out.println("AVG: " + i.getName());
+	    System.out.println("Type: " + i.getName());
+	}
+    }
+
+//    public void averageStudent(ArrayList<Student> list) {
+//	for (Student i : list) {
+//	    i.setAverage((i.getChemistry() + i.getMath() + i.getPhysical()) / 3);
+//	    double res = i.getAverage();
+//	    if (res >= 7.5) i.setType("A");
+//	    else if (res >= 6) i.setType("B");
+//	    else if (res >= 4) i.setType("C");
+//	    else i.setType("D");
+//	}
+//    }
+
+    public void getPercentTypeStudent(ArrayList<Student> list) {
+	HashMap<String, Double> map = new HashMap<String, Double>();
+
+	int typeA = 0;
+	int typeB = 0;
+	int typeC = 0;
+	int typeD = 0;
+	int size = list.size();
+
+	for (Student i : list) {
+	    if (i.getType().equalsIgnoreCase("A")) typeA++;
+	    else if (i.getType().equalsIgnoreCase("B")) typeB++;
+	    else if (i.getType().equalsIgnoreCase("C")) typeC++;
+	    else if (i.getType().equalsIgnoreCase("D")) typeD++;
+	}
+
+	map.put("A", typeA / size *100);
+	map.put("B", typeB / size *100);
+	map.put("C", typeC / size *100);
+	map.put("D", typeD / size *100);
+    }
+
+    public static void main(String[] args) {
+	// TODO Auto-generated method stub
+	Main m = new Main();
+	ArrayList<Student> list = new ArrayList<Student>();
+	int choice = 0;
+	do {
+	    m.menu();
+
+	    choice = Validation.checkInt();
+
+	    switch (choice) {
+	    case 1:
+		m.create(list);
+		break;
+	    case 2:
+		m.display(list);
+		break;
+	    case 3:
+
+		break;
+	    case 4:
+		break;
+	    default:
+		System.out.println("Invalid selection");
+		break;
+
+	    }
+	} while (choice != 3);
+    }
+
+}

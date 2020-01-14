@@ -1,0 +1,33 @@
+package Core;
+
+import MyLinkedList.MyLinkedList;
+
+public class LinkedListStack {
+    private MyLinkedList list = new MyLinkedList();
+    private int count = -1;
+
+    public LinkedListStack() {
+    }
+
+    public void push(String value) {
+	list.addFirst(value);
+	count++;
+    }
+
+    public void display() {
+	list.traverse();
+    }
+
+    public String peek() {
+	return list.getNodePosition(count++).data;
+    }
+
+    public String pop() {
+	count--;
+	return list.getNodePosition(count + 1).data;
+    }
+
+    boolean isEmpty() {
+	return list.isEmpty();
+    }
+}

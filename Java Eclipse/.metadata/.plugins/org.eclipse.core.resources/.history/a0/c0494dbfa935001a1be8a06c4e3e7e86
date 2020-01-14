@@ -1,0 +1,118 @@
+package J1SP0064;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
+
+public class Checkdataformat {
+
+    public static Scanner sc = new Scanner(System.in);
+
+    public void menu() {
+	System.out.println("======================= MENU =========================");
+	System.out.printf("| 1. %-47s |\n", "Check number");
+	System.out.printf("| 2. %-47s |\n", "Check email");
+	System.out.printf("| 3. %-47s |\n", "Check date");
+	System.out.println("======================================================");
+	System.out.print("Choose option: ");
+    }
+
+    public void numberCheck() {
+	sc.nextLine();
+	while (true) {
+//	    try {
+	    System.out.print("Phone number: ");
+//		int number = sc.nextInt();
+	    String n = sc.nextLine();
+	    if (n.matches("\\d{10}")) {
+		System.out.println("Phone number: " + n);
+		return;
+	    }
+	    if (n.matches("\\w+")) {
+		System.out.println("Phone number must is number");
+		
+	    } else {
+		System.out.println("Phone number must be 10 digits");
+	    }
+//	    } catch (Exception e) {
+//		sc.nextLine();
+//
+//	    }
+
+	}
+    }
+
+    public void emailCheck() {
+	sc.nextLine();
+	while (true) {
+	    System.out.print("Email: ");
+	    String email = sc.nextLine();
+	    if (email.matches("(\\w+)@(\\w+).(\\w+)")) {
+		System.out.println("Email: " + email);
+		return;
+	    } else {
+		System.out.println("Email must is correct format");
+	    }
+	}
+    }
+
+    public void dateCheck() {
+	sc.nextLine();
+	while (true) {
+//	    System.out.print("Date: ");
+//	    String data = sc.nextLine();
+//	    if (data.matches("[0-31]{2}[-/][0-12]{2}[-/]\\d{4}")) {
+//		System.out.println(data);
+//		return;
+//	    } else {
+//		System.out.println("Date to correct format(dd/MM/yyyy).");
+//	    }
+	    try {
+		System.out.print("Date: ");
+		String data = sc.nextLine();
+		LocalDate date = LocalDate.parse(data, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+
+		System.out.println("Date: " + date);
+		return;
+	    } catch (Exception e) {
+		// TODO: handle exception
+		System.out.println("Date to correct format(dd/MM/yyyy).");
+	    }
+
+	}
+    }
+
+    public static void main(String[] args) {
+	// TODO Auto-generated method stub
+	Checkdataformat M = new Checkdataformat();
+	int choice = 0;
+	do {
+	    M.menu();
+
+	    try {
+		choice = sc.nextInt();
+	    } catch (Exception e) {
+		sc.nextLine();
+	    }
+
+	    switch (choice) {
+	    case 1:
+		M.numberCheck();
+		break;
+	    case 2:
+		M.emailCheck();
+		break;
+	    case 3:
+		M.dateCheck();
+		break;
+	    case 4:
+		break;
+	    default:
+		System.out.println("Invalid selection");
+		break;
+
+	    }
+	} while (choice != 4);
+
+    }
+}

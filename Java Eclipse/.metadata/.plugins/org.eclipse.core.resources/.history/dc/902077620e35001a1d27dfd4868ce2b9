@@ -1,0 +1,315 @@
+package Core;
+
+import java.util.Scanner;
+
+class Manager {
+
+    public static Scanner sc = new Scanner(System.in);
+
+    Node nodeA = new Node(2);
+    Node nodeB = new Node(4);
+    Node nodeC = new Node(7);
+    Node nodeD = new Node(9);
+
+    public Manager() {
+	MyList.head = nodeA;
+	nodeA.ptr = nodeB;
+	nodeB.ptr = nodeC;
+	nodeC.ptr = nodeD;
+	MyList.tail = nodeD;
+    }
+
+    public void menu() {
+	System.out.println("======================= MENU =========================");
+	System.out.printf("| 1.  %-47s |\n", "add First.");
+	System.out.printf("| 2.  %-47s |\n", "add Last.");
+	System.out.printf("| 3.  %-47s |\n", "add After.");
+	System.out.printf("| 4.  %-47s |\n", "traverse.");
+	System.out.printf("| 5.  %-47s |\n", "delete the head.");
+	System.out.printf("| 6.  %-47s |\n", "delete the tail.");
+	System.out.printf("| 7.  %-47s |\n", "delete the node after the node.");
+	System.out.printf("| 8.  %-47s |\n", "delele the first node if it equal to x.");
+	System.out.printf("| 9.  %-47s |\n", "search the first node having info x.");
+	System.out.printf("| 10. %-47s |\n", "count number of Node in the list.");
+	System.out.printf("| 11. %-47s |\n", "delete an i-th node on the list.");
+	System.out.printf("| 12. %-47s |\n", "sort the list by ascending.");
+	System.out.printf("| 13. %-47s |\n", "delete node p if it exists in the list.");
+	System.out.printf("| 14. %-47s |\n", "create array containing info of all nodes.");
+//	System.out.printf("| 15. %-47s |\n", "Merge two ordered singly linked lists .");
+	System.out.printf("| 16. %-47s |\n", "add a node with value x  before the node p.");
+//	System.out.printf("| 17. %-47s |\n", "Attach a singly linked list.");
+	System.out.printf("| 18. %-47s |\n", "return the maximum value. ");
+	System.out.printf("| 19. %-47s |\n", "return the minimum value. ");
+	System.out.printf("| 20. %-47s |\n", "return the sum.");
+	System.out.printf("| 21. %-47s |\n", "return the average.");
+	System.out.printf("| 22. %-47s |\n", "is if the list is sorted.");
+	System.out.printf("| 23. %-47s |\n", "insert node with value x into sorted list.");
+	System.out.printf("| 24. %-47s |\n", "Reverse a singly linked list.");
+//	System.out.printf("| 25. %-47s |\n", "Check two singly linked list.");
+	System.out.printf("| 26. %-47s |\n", "Exit.");
+	System.out.println("======================================================");
+	System.out.print("Choose option: ");
+    }
+
+    CallLinkedList MyList = new CallLinkedList();
+
+    public void addToHead() {
+
+	System.out.print("\nEnter number: ");
+	int n = Validation.checkInt();
+	MyList.addFirst(n);
+	MyList.traverse();
+
+    }
+
+    public void addToLast() {
+	System.out.print("\nEnter number: ");
+	int n = Validation.checkInt();
+	MyList.addLast(n);
+	MyList.traverse();
+    }
+
+    public boolean checkNodeExit(Node e) {
+	if (e == null) { return false; }
+	Node p = MyList.head;
+	while (p != null) {
+	    if (p.data == e.data) return true;
+	    p = p.ptr;
+	}
+
+	return false;
+    }
+
+    public void AddAfter() {
+
+	System.out.print("\nEnter Node want to add after: ");
+	int n = Validation.checkInt();
+
+	Node e = MyList.getNodePosition(n);
+	if (!checkNodeExit(e)) {
+	    System.out.println("This Node doesn't exist!");
+	    return;
+	}
+
+	System.out.print("\nEnter x: ");
+	int x = Validation.checkInt();
+	MyList.addAfter(e, x);
+
+    }
+
+    public void deleteFromHead() {
+	if (MyList.head != null) {
+	    System.out.print("Before Delete ");
+	    MyList.traverse();
+	    int res = MyList.deleteFirst();
+	    System.out.print("After Delete ");
+	    MyList.traverse();
+	    System.out.println("The number has been removed was " + res);
+	} else System.out.println("Node List is empty.");
+    }
+
+    public void deleteFromTail() {
+	if (MyList.head != null) {
+	    System.out.print("Before Delete ");
+	    MyList.traverse();
+	    int res = MyList.deleteLast();
+	    System.out.print("After Delete ");
+	    MyList.traverse();
+	    System.out.println("Node removed was: " + res);
+	} else System.out.println("Node List is empty.");
+    }
+
+    public void DeleteAfter() {
+	System.out.print("\nEnter Node: ");
+	int n = Validation.checkInt();
+
+	Node e = MyList.getNodePosition(n);
+	if (!checkNodeExit(e)) {
+	    System.out.println("This Node doesn't exist!");
+	    return;
+	}
+	if (MyList.isEmpty()) {
+	    System.out.println("Node List is empty!");
+	    return;
+	}
+
+	System.out.println("Node removed was: " + MyList.deleteAfter(e));
+    }
+
+    public void deleteIfequal() {
+	System.out.print("\nEnter number: ");
+	int n = Validation.checkInt();
+	System.out.print("Before delete ");
+	MyList.traverse();
+	MyList.dele(n);
+    }
+
+    public void Search() {
+	System.out.print("\nEnter number: ");
+	int n = Validation.checkInt();
+	Node res = MyList.search(n);
+	System.out.println(res != null ? "Node: " + res.data : "Not Found.");
+    }
+
+    public void Count() {
+	System.out.println("The number of nodes in the list: " + MyList.count());
+    }
+
+    public void DeleAt() {
+	System.out.print("\nEnter i-th want to search: ");
+	int n = Validation.checkInt();
+	if (n > MyList.count()) {
+	    System.out.println("The input was surpassed the size of the node list.");
+	    return;
+	}
+	MyList.deleAt(n);
+    }
+
+    public void Sort() {
+	System.out.print("Before Sorted ");
+	MyList.traverse();
+	MyList.sort();
+	System.out.print("After Sorted ");
+	MyList.traverse();
+    }
+
+    public void DeleNode() {
+	System.out.print("\nEnter Node: ");
+	int n = Validation.checkInt();
+
+	Node e = new Node(n);
+	if (!checkNodeExit(e)) {
+	    System.out.println("This Node doesn't exist!");
+	    return;
+	}
+	System.out.print("Before delete ");
+	MyList.traverse();
+	MyList.deleNode(e);
+    }
+
+    public void ToArray() {
+	int[] arr = MyList.toArray();
+	System.out.println("Convert Node List to Array: ");
+	for (int i = 0; i < arr.length; i++) {
+	    System.out.print(arr[i] + " ");
+	}
+
+    }
+
+    public void AddBefore() {
+	System.out.print("\nEnter Node before: ");
+	int n = Validation.checkInt();
+
+	Node e = new Node(n);
+	if (!checkNodeExit(e)) {
+	    System.out.println("This Node doesn't exist!");
+	    return;
+	}
+
+	System.out.print("\nEnter node want to add: ");
+	int x = Validation.checkInt();
+	MyList.addBefore(e, x);
+    }
+
+    public void Max() {
+	MyList.traverse();
+	System.out.println("Max value in the Node List: " + MyList.max());
+    }
+
+    public void Min() {
+	MyList.traverse();
+	System.out.println("Min value in the Node List: " + MyList.min());
+    }
+
+    public void Sum() {
+	MyList.traverse();
+	System.out.println("Sum: " + MyList.sum());
+    }
+
+    public void Avg() {
+	MyList.traverse();
+	System.out.println("Average: " + MyList.avg());
+    }
+
+    public void sortedcheck() {
+	if (MyList.SortedCheck()) {
+	    System.out.println("The Node List have already sorted");
+	    MyList.traverse();
+	} else {
+	    System.out.println("The Node List haven't sorted");
+	    MyList.traverse();
+	}
+    }
+
+    public void Insert() {
+	System.out.print("\nEnter Node want to add into Sorted list: ");
+	int n = Validation.checkInt();
+	System.out.print("Before inserted ");
+	MyList.traverse();
+	MyList.insert(n);
+    }
+
+    public void Reverse() {
+	System.out.print("Before reversed ");
+	MyList.traverse();
+	MyList.reverse();
+    }
+
+    public void mergeLinkedList() {
+	if (MyList.isEmpty()) {
+	    System.out.println(
+	                    "Node List is empty.\nPlease enter input to this List to use this function!");
+	    return;
+	}
+
+	CallLinkedList newLink = new CallLinkedList();
+	System.out.print("\nHow many Node you want to add to new singlyLinked List: ");
+	int n = Validation.checkInt();
+	for (int i = 0; i < n; i++) {
+	    int x = Validation.checkInt();
+	    newLink.addLast(x);
+	}
+	newLink.traverse();
+
+//	Node nodeE = new Node(12);
+//	Node nodeZ = new Node(56);
+//	Node nodeX = new Node(91);
+//	Node nodeY = new Node(20);
+//
+//	newLink.head = nodeE;
+//	nodeE.ptr = nodeZ;
+//	nodeZ.ptr = nodeX;
+//	nodeX.ptr = nodeY;
+    }
+
+    public void mergeLinkedListToTail() {
+	if (MyList.isEmpty()) {
+	    System.out.println(
+	                    "Node List is empty.\nPlease enter input to this List before using this function!");
+	    return;
+	}
+
+	CallLinkedList newLink = new CallLinkedList();
+//	System.out.print("\nHow many Node you want to add to new singlyLinked List: ");
+//	int n = Validation.checkInt();
+//	for (int i = 0; i < n; i++) {
+//	    int x = Validation.checkInt();
+//	    newLink.addLast(x);
+//	}
+//	newLink.traverse();
+
+	Node nodeE = new Node(12);
+	Node nodeZ = new Node(56);
+	Node nodeX = new Node(91);
+	Node nodeY = new Node(20);
+
+	newLink.head = nodeE;
+	nodeE.ptr = nodeZ;
+	nodeZ.ptr = nodeX;
+	nodeX.ptr = nodeY;
+	newLink.traverse();
+
+	newLink.MergerLinkedListToTail(newLink);
+    }
+
+}

@@ -1,0 +1,8 @@
+package Core;
+
+import MyLinkedList.MyLinkedList;
+
+public class LinkedListStack {
+    private MyLinkedList list = new MyLinkedList();
+
+}

@@ -1,0 +1,14 @@
+/*
+  Name: Pham Duy Dat
+  Class: SE140191
+  ID: DE140191
+*/
+
+package J1SP0056;
+
+public class hello {
+    public static void main(String[] args) {
+
+	System.out.println("Hello world");
+    }
+}

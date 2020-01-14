@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.wb.internal.swing.MigLayout.model.ui.ColumnsDialog">
+		<item key="x" value="610"/>
+		<item key="y" value="236"/>
+		<item key="width" value="700"/>
+		<item key="height" value="558"/>
+	</section>
+	<section name="org.eclipse.wb.internal.swing.MigLayout.model.ui.CellEditDialog">
+		<item key="x" value="764"/>
+		<item key="y" value="433"/>
+		<item key="width" value="392"/>
+		<item key="height" value="163"/>
+	</section>
+</section>

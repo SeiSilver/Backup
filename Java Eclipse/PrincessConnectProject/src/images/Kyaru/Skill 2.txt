@@ -1,0 +1,2 @@
+Armor Down
+Debuff DEF vật lý/phép (nhỏ) của một kẻ địch ở phía trước trong 12s

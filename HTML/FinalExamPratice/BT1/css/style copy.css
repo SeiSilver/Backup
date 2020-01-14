@@ -1,0 +1,74 @@
+#logo {
+    display: inline-block;
+    width: 20%;
+    /* float: left; */
+    margin-right: auto;
+}
+
+#link {
+    display: block;
+    font-size: 20px;
+    text-decoration: none;
+    /* margin-right: 100%; */
+    float: right;
+    /* width:  */
+    border-top: 20cm;
+    margin: 2%;
+}
+
+#banner {
+    display: block;
+    /* width: 100%; */
+    /* size: 100%; */
+    /* height: 40%; */
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+h1 {
+    color: #49b6ad;
+}
+
+div h2 {
+    color: rgb(16, 166, 204);
+    font-size: 21px;
+}
+
+div {
+    display: block;
+    width: 80%;
+    float: left;
+    /* margin-right: 20%; */
+}
+
+#right h3 {
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: 10%;
+    width: 100%;
+    /* margin: 5%; */
+    text-decoration: underline;
+    /* color: gray; */
+}
+
+#right img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 55%;
+}
+
+#right {
+    /* margin-left: 70%; */
+    display: block;
+    /* margin: 2%; */
+    width: 20%;
+    float: left;
+    /* background-color: black; */
+}
+
+body {
+    padding: 1cm 2cm 10cm 2cm;
+    font-size: 20px;
+}

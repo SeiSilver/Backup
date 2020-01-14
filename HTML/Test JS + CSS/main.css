@@ -1,0 +1,53 @@
+body {
+    text-align: center;
+}
+
+textarea,
+video,
+iframe {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* center a lot of element */
+
+p.normal {
+    font-weight: normal;
+}
+
+p.light {
+    font-weight: lighter;
+}
+
+p.thick {
+    font-weight: bold;
+}
+
+p.thicker {
+    font-weight: 900;
+}
+
+th {
+    font-weight: bold;
+    padding: 2%;
+    background-color: rgb(41, 148, 219);
+    font-size: 30px;
+    text-align: center;
+}
+
+td {
+    /* padding: 5%; */
+    text-align: center;
+    background-color: rgba(121, 215, 228, 0.774);
+    font-size: 24px;
+    padding: 20px;
+    /* margin: 5px; */
+}
+
+tr:hover td,
+tr:hover th {
+    opacity: 1.5;
+    transition: 1s;
+    background-color: yellow;
+}

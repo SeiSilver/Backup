@@ -1,0 +1,6 @@
+400        Corn       0.89      	C
+100        Salmon     999.00    	M
+200        Bananas    1.58      	P
+500        Dishes     3.45      	N
+300        Milk       1.89      	D
+0          tes        12.00     	T

@@ -1,0 +1,2 @@
+Lunch Time (+)
+Tự buff DEF phép (nhỏ) trong 12s, hồi HP lượng (nhỏ) và tạo khiên hấp thụ một lượng DMG vật lý/phép nhất định trong 8s cho bản thân

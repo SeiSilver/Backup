@@ -1,0 +1,170 @@
+package MyLinkedList;
+
+public class MyLinkedList {
+    Node head;
+    Node tail;
+
+    public MyLinkedList(Node head, Node tail) {
+	this.head = head;
+	this.tail = tail;
+    }
+
+    public MyLinkedList() {
+	this.head = null;
+	this.tail = new Node(); // tranh truong hop nhan head nhung tail lai nhan gia tri null
+    }
+
+    boolean isEmpty() {
+	return (head == null);
+    }
+
+    void clear() {
+	head = tail = null;
+    }
+
+//    void traverse() {
+//	Node p = head;
+//	if (isEmpty()) {
+//	    System.out.println("Node List is empty!");
+//	    return;
+//	}
+//	System.out.print("LinkedList: ");
+//	while (p != null) {
+//	    System.out.print(p.data + " ");
+//	    p = p.ptr;
+//	}
+//	System.out.println();
+//    }
+
+    public void addFirst(String x) {
+	Node p = new Node(x);
+	if (isEmpty()) {
+	    head = tail = p;
+
+	} else {
+	    p.ptr = head;
+	    head = p;
+	}
+    }
+
+    public void addLast(String x) {
+	Node p = new Node(x);
+	if (isEmpty()) {
+	    head = tail = p;
+	} else {
+	    tail.ptr = p;
+	    tail = p;
+	}
+    }
+
+    public Node getNodePosition(String x) {
+	Node p = head;
+	while (p != null) {
+	    if (p.data == x) { return p; }
+	    p = p.ptr;
+	}
+	return null;
+    }
+
+    public void addAfter(Node e, String x) {
+
+	Node res = new Node(x);
+	res.ptr = e.ptr;
+	e.ptr = res;
+	traverse();
+
+    }
+
+//    public String deleteFirst() {
+//	if (isEmpty()) { return Integer.MIN_VALUE; }
+//	Node p = head;
+//	head = head.ptr;
+//	return p.data;
+//    }
+//
+//    public String deleteLast() {
+//	if (isEmpty()) { return Integer.MIN_VALUE; }
+//	if (head == tail) { return deleteFirst(); }
+//
+//	Node p = head;
+//
+//	Node previouseNode = new Node();
+//
+//	while (p.ptr != null) {
+//	    previouseNode = p;
+//	    p = p.ptr;
+//	}
+//
+//	tail = previouseNode;
+//	previouseNode.ptr = null;
+//
+//	return p.data;
+//    }
+//
+//    public String deleteAfter(Node e) {
+//	// TODO Auto-generated method stub
+//	System.out.print("Before delete ");
+//	traverse();
+//	int temp = 0;
+//	if (e.ptr != null) {
+//	    temp = e.ptr.data;
+//	}
+//	e.ptr = e.ptr.ptr;
+//	System.out.print("After delete ");
+//	traverse();
+//	return temp;
+//
+//    }
+//
+//    public void dele(int x) {
+//	if (isEmpty()) {
+//	    System.out.println("Node List is empty");
+//	    return;
+//	}
+//	System.out.print("After delete ");
+//
+//	if (head.data == x) { // xoa First Node have value x
+//	    deleteFirst();
+//	    traverse();
+//	    return;
+//	}
+//
+//	Node p = head;
+//	Node temp = p;
+//	while (p.ptr != null && p.data != x) {
+//	    temp = p;
+//	    p = p.ptr;
+//	}
+//	if (p.data == x) {
+//	    temp.ptr = p.ptr;
+//	    traverse();
+//	}
+//
+//    }
+//
+//    public Node search(int x) {
+//	Node p = head;
+//	while (p != null) {
+//	    if (p.data == x) { return p; }
+//	    p = p.ptr;
+//	}
+//
+//	return null;
+//    }
+//
+//    public void deleAt(int i) {
+//	System.out.print("Before delete ");
+//	int c = 1;
+//	Node p = head;
+//	traverse();
+//	while (true) {
+//	    if (c == i) {
+//		dele(p.data);
+//		return;
+//	    }
+//	    p = p.ptr;
+//	    c++;
+//	}
+//    }
+
+}

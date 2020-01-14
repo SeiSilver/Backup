@@ -1,0 +1,2 @@
+Thunder Ball (+)
+Gây DMG phép (trung bình) lên một kẻ địch ở phía trước, đồng thời gây thêm DMG phép (nhỏ) lên toàn bộ kẻ địch ở trong phạm vi 200 range xung quanh vị trí đó, và debuff DEF phép (nhỏ) của đối phương trong 12s

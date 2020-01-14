@@ -1,0 +1,38 @@
+{
+    "configurations": [{
+            "name": "WinGW",
+            "intelliSenseMode": "clang-x64",
+            "compilerPath": "D:/code/MinGW/mingw32/bin/gcc.exe",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "D:/code/MinGW/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++",
+                "D:/code/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "cStandard": "c11",
+            "cppStandard": "c++17"
+        },
+        {
+            "name": "c++",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "D:/code/MinGW/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++",
+                "D:/code/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "compilerPath": "D:/code/MinGW/mingw32/bin/gdb.exe",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "clang-x64"
+        }
+    ],
+    "version": 4
+}

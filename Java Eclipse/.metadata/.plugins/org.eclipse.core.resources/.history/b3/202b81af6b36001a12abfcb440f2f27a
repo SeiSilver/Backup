@@ -1,0 +1,11 @@
+package Core;
+
+public class Main {
+
+    public static void main(String[] args) {
+	// TODO Auto-generated method stub
+	String[] arr = { "Jack", "Queen", "King", "Ace" };
+	Stack t = new Stack(arr.length);
+    }
+
+}

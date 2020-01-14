@@ -1,0 +1,11 @@
+package J1SP0065;
+
+public class Student {
+    private String name;
+    private String Class;
+    private double Math;
+    private double Physyal;
+    private double Chemistry;
+    private double Average;
+    private double type;
+}

@@ -1,0 +1,2 @@
+Princess Strike
+Gây DMG vật lý (lớn) lên một kẻ địch ở phía trước, đồng thời tự buff DEF vật lý, DEF phép (trung bình) cho bản thân trong 18s

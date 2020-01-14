@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <input type="checkbox" />
+    <input type="text" />
+    <select>
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="mercedes">Mercedes</option>
+        <option value="audi">Audi</option>
+    </select>
+
+    <textarea rows="5" cols="50" style="display: block;">
+        At w3schools.com you will learn how to make a website. We offer free tutorials in all web development technologies.
+    </textarea>
+    <hr>
+    <video width="320" height="240" controls>
+        <source src="movie.mp4" type="video/mp4">
+    </video>
+    <hr>
+    <iframe width="420" height="315" src="https://www.youtube.com/embed/2eKCGOuPfH8?autoplay=0" style="display: block;" frameborder="0" allowfullscreen>
+    </iframe>
+    <!-- https://www.youtube.com/embed/Video-ID -->
+
+    <hr>
+
+    <audio controls>
+        <source src="8man op.mp3?" type="audio/mp3">
+    </audio>
+
+    <hr>
+
+    <p class="normal">This is a paragraph.</p>
+    <p class="light">This is a paragraph.</p>
+    <p class="thick">This is a paragraph.</p>
+    <p class="thicker">This is a paragraph.</p>
+
+    <hr>
+    <button type="button" onclick="textchange()" ondblclick="undo()"> Click at this</button>
+
+    <p id="datachange"> test</p>
+
+    <hr>
+    <button onclick="hello()" style="display: inline-block;">Click</button>
+    <P id="demo" style="display: inline-block;"> demo </P>
+
+    <hr>
+    <table style="width:100%">
+        <tr>
+            <th>Waifu</th>
+            <th>Anime - LN - Manga</th>
+        </tr>
+        <tr>
+            <td>Yue</td>
+            <td>Arifureta</td>
+        </tr>
+        <tr>
+            <td>Yoshino</td>
+            <td>Date A Live</td>
+        </tr>
+    </table>
+
+    <hr>
+    <img src="img/LOLI.jpg" alt="Loli" width="10%" onmouseover="zoom(this)" onmouseout="undozoom(this)">
+    <hr>
+    <u style="display: block;">Loli is the best</u>
+    <i style="display: block;">Loli is the best</i>
+    <b style="display: block;">Loli is the best</b>
+    <hr>
+    <button onclick="xy()" style="display: inline;">Click</button>
+    <p id="xy"></p>
+    <hr>
+
+    <div>
+        <input type="radio" id="en" name="language" value="English" checked /> English
+
+        <input type="radio" id="vn" name="language" value="Vietnamese" /> Vietnamese<br>
+
+        <input type="submit" value="Submit" onclick="radio()">
+    </div>
+
+    <res id="radiodata"></res>
+
+    <hr>
+    <p>Please input a number between 1 and 10:</p>
+
+    <input id="numb" type="number">
+
+    <button type="button" onclick="myFunction()">Submit</button>
+    <p id="number"></p>
+</body>
+
+</html>

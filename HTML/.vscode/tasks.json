@@ -1,0 +1,15 @@
+// {
+//     "version": "2.0.0",
+//     "isBuildCommand": false,
+//     "command": "coccoc",
+//     "windows": {
+//         //         // "command": "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe",
+//         "command": "C:\\Users\\Admin\\AppData\\Local\\CocCoc\\Browser\\Application\\browser.exe"
+//     },
+//     "args": [
+//         "${file}"
+//     ],
+//     "problemMatchers": [
+//         "$eslint-compact"
+//     ]
+// }

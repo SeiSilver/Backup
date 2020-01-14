@@ -1,0 +1,2 @@
+Princess Variant
+Gây DMG vật lý (đặc biệt lớn) lên một kẻ địch ở phía trước, đồng thời tự buff DEF vật lý/phép (đặc biệt lớn), ATK vật lý (trung bình) cho bản thân trong 18s. Lượng HP còn lại càng nhiều thì lượng buff ATK vật lý càng lớn

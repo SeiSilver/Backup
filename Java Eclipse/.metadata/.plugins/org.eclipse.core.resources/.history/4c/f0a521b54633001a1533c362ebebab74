@@ -1,0 +1,45 @@
+package Core;
+
+interface Hinhhoc {
+    int n = 0;
+
+    public double EnterRadius();
+
+    public void TinhChuVi();
+
+    public void TinhDienTich();
+
+    public void PrintRes();
+}
+
+public class Main implements Hinhhoc {
+
+    public static void main(String[] args) {
+	// TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public double EnterRadius() {
+	return 5;
+    }
+
+    @Override
+    public void TinhChuVi() {
+	// TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public void TinhDienTich() {
+	// TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public void PrintRes() {
+	// TODO Auto-generated method stub
+
+    }
+
+}

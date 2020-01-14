@@ -1,0 +1,40 @@
+package Core;
+
+import java.util.ArrayList;
+import java.util.EmptyStackException;
+
+public class ArrayListStack {
+    private ArrayList<String> list = new ArrayList<String>();
+
+    public ArrayListStack() {
+
+    }
+
+    public void push(String value) {
+	list.add(value);
+    }
+
+    public void display() {
+	System.out.print("Array List: ");
+//	for (String i : list) {
+//	    System.out.println(i);
+//	}
+	System.out.println(list);
+    }
+
+    public String peek() {
+	if (data == -1) throw new EmptyStackException();
+
+	return list[data];
+    }
+
+    public String pop() {
+	if (data == -1) throw new EmptyStackException();
+	data--;
+	return list[data + 1];
+    }
+
+    boolean isEmpty() {
+	return data == -1;
+    }
+}

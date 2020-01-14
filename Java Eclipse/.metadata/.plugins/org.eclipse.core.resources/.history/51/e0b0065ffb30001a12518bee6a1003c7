@@ -1,0 +1,160 @@
+package Core;
+
+class Node {
+    int number;
+    Node next;
+
+    public Node(int number) {
+	super();
+	this.number = number;
+	this.next = null;
+    }
+
+    public Node() {
+	this.next = null;
+    }
+
+}
+
+class SinglyLinkedList {
+    public Node head;
+    public Node tail;
+
+    public SinglyLinkedList(Node head, Node tail) {
+	this.head = head;
+	this.tail = tail;
+    }
+
+    public SinglyLinkedList() {
+	this.head = null;
+	this.tail = null;
+    }
+
+    boolean isEmpty() {
+	return (head == null);
+    }
+
+    void clear() {
+	head = tail = null;
+    }
+
+    void traverse() {
+	Node p = head;
+	System.out.println("\nLinkedList is ...");
+	while (p != null) {
+	    System.out.print(" " + p.number);
+	    p = p.next;
+	}
+    }
+
+    public void addFirst(int x) {
+	Node p = new Node(x);
+	if (isEmpty()) {
+	    head = tail = p;
+
+	} else {
+	    p.next = head;
+	    head = p;
+	}
+    }
+
+    public void addLast(int x) {
+	Node p = new Node(x);
+	if (isEmpty()) {
+	    head = tail = p;
+	} else {
+	    tail.next = p;
+	    tail = p;
+	}
+    }
+
+    public void insertPosition(int x, int position) {
+	Node p = new Node(x);
+	if (isEmpty()) {
+	    head = tail = p;
+	    return;
+	}
+	int count = 1;
+	Node temp = head;
+	while (count++ <= position) {
+	    temp = temp.next;
+	}
+	p.next = temp.next;
+
+	count = 1;
+	Node saveNode = head;
+
+	while (count++ <= position) {
+	    if (count == position) {
+		head.next = p;
+		return;
+	    }
+	    saveNode = saveNode.next;
+	}
+
+    }
+
+    int deleteFirst() {
+	if (isEmpty()) { return Integer.MIN_VALUE; }
+	Node p = head;
+	head = head.next;
+	return p.number;
+    }
+
+    int deleteLast() {
+	if (isEmpty()) { return Integer.MIN_VALUE; }
+	Node p = head;
+	Node q = tail;
+
+	Node previouseNode = new Node();
+
+	while (p.next != null) {
+	    previouseNode = q;
+	    p = p.next;
+	}
+	tail = previouseNode;
+	previouseNode.next = null;
+	return p.number;
+    }
+
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+	// TODO Auto-generated method stub
+	Node nodeA = new Node(9);
+	Node nodeB = new Node(12);
+	Node nodeC = new Node(6);
+	Node nodeD = new Node(4);
+	Node nodeE = new Node(7);
+
+	SinglyLinkedList sllist = new SinglyLinkedList();
+	sllist.head = nodeA;
+	nodeA.next = nodeB;
+	nodeB.next = nodeC;
+	nodeC.next = nodeD;
+	nodeD.next = nodeE;
+	nodeE.next = sllist.tail;
+//	sllist.tail = nodeE;
+
+	sllist.traverse();
+
+//	sllist.addFirst(1);
+//	sllist.addLast(2);
+//	System.out.println();
+//	sllist.traverse();
+//	System.out.println();
+//	sllist.insertPosition(0, 3);
+//	System.out.println();
+//	sllist.traverse();
+	sllist.deleteFirst();
+
+	sllist.traverse();
+	sllist.deleteLast();
+	
+	sllist.traverse();
+
+    }
+
+}

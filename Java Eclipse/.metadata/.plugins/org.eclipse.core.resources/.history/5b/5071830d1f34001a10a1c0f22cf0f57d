@@ -1,0 +1,17 @@
+package Core;
+
+class Node {
+    int data;
+    Node ptr;
+
+    public Node(int data) {
+	super();
+	this.data = data;
+	this.next = null;
+    }
+
+    public Node() {
+	this.next = null;
+    }
+
+}

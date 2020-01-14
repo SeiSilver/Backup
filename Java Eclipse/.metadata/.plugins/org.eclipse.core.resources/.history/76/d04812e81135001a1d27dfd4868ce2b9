@@ -1,0 +1,374 @@
+package Core;
+
+public class CallLinkedList {
+    Node head;
+    Node tail;
+
+    public CallLinkedList(Node head, Node tail) {
+	this.head = head;
+	this.tail = tail;
+    }
+
+    public CallLinkedList() {
+	this.head = null;
+	this.tail = new Node(); // tranh truong hop nhan head nhung tail lai nhan gia tri null
+    }
+
+    boolean isEmpty() {
+	return (head == null);
+    }
+
+    void clear() {
+	head = tail = null;
+    }
+
+    void traverse() {
+	Node p = head;
+	if (isEmpty()) {
+	    System.out.println("Node List is empty!");
+	    return;
+	}
+	System.out.print("LinkedList: ");
+	while (p != null) {
+	    System.out.print(p.data + " ");
+	    p = p.ptr;
+	}
+	System.out.println();
+    }
+
+    public void addFirst(int x) {
+	Node p = new Node(x);
+	if (isEmpty()) {
+	    head = tail = p;
+
+	} else {
+	    p.ptr = head;
+	    head = p;
+	}
+    }
+
+    public void addLast(int x) {
+	Node p = new Node(x);
+	if (isEmpty()) {
+	    head = tail = p;
+	} else {
+	    tail.ptr = p;
+	    tail = p;
+	}
+    }
+
+    public Node getNodePosition(int x) {
+	Node p = head;
+	while (p != null) {
+	    if (p.data == x) { return p; }
+	    p = p.ptr;
+	}
+	return null;
+    }
+
+    public void addAfter(Node e, int x) {
+
+	Node res = new Node(x);
+	res.ptr = e.ptr;
+	e.ptr = res;
+	traverse();
+
+    }
+
+    public int deleteFirst() {
+	if (isEmpty()) { return Integer.MIN_VALUE; }
+	Node p = head;
+	head = head.ptr;
+	return p.data;
+    }
+
+    public int deleteLast() {
+	if (isEmpty()) { return Integer.MIN_VALUE; }
+	if (head == tail) { return deleteFirst(); }
+
+	Node p = head;
+
+	Node previouseNode = new Node();
+
+	while (p.ptr != null) {
+	    previouseNode = p;
+	    p = p.ptr;
+	}
+
+	tail = previouseNode;
+	previouseNode.ptr = null;
+
+	return p.data;
+    }
+
+    public int deleteAfter(Node e) {
+	// TODO Auto-generated method stub
+	System.out.print("Before delete ");
+	traverse();
+	int temp = 0;
+	if (e.ptr != null) {
+	    temp = e.ptr.data;
+	}
+	e.ptr = e.ptr.ptr;
+	System.out.print("After delete ");
+	traverse();
+	return temp;
+
+    }
+
+    public void dele(int x) {
+	if (isEmpty()) {
+	    System.out.println("Node List is empty");
+	    return;
+	}
+	System.out.print("After delete ");
+
+	if (head.data == x) { // xoa First Node have value x
+	    deleteFirst();
+	    traverse();
+	    return;
+	}
+
+	Node p = head;
+	Node temp = p;
+	while (p.ptr != null && p.data != x) {
+	    temp = p;
+	    p = p.ptr;
+	}
+	if (p.data == x) {
+	    temp.ptr = p.ptr;
+	    traverse();
+	}
+
+    }
+
+    public Node search(int x) {
+	Node p = head;
+	while (p != null) {
+	    if (p.data == x) { return p; }
+	    p = p.ptr;
+	}
+
+	return null;
+    }
+
+    public int count() {
+	int c = 0;
+	if (isEmpty()) return 0;
+	Node p = head;
+	while (p.ptr != null) {
+	    p = p.ptr;
+	    c++;
+	}
+	return c + 1;
+    }
+
+    public void deleAt(int i) {
+	System.out.print("Before delete ");
+	int c = 1;
+	Node p = head;
+	traverse();
+	while (true) {
+	    if (c == i) {
+		dele(p.data);
+		return;
+	    }
+	    p = p.ptr;
+	    c++;
+	}
+    }
+
+    public void sort() {
+	for (Node i = head; i != null && i.ptr != null; i = i.ptr) {
+	    for (Node j = i.ptr; j != null && j.ptr != null; j = j.ptr) {
+		if (j.data < i.data) {
+		    int temp = i.data;
+		    i.data = j.data;
+		    j.data = temp;
+		}
+	    }
+	}
+    }
+
+    public void deleNode(Node e) {
+	if (isEmpty()) {
+	    System.out.println("Node List is empty");
+	    return;
+	}
+
+	e = e.ptr;
+	System.out.println("After delete ");
+	traverse();
+    }
+
+    public int[] toArray() {
+	if (isEmpty()) {
+	    System.out.println("The given list is empty");
+	    return null;
+	}
+	int arr[] = new int[count()];
+	Node p = head;
+	int i = 0;
+	while (p != null && p.ptr != null) {
+	    arr[i++] = p.data;
+	    p = p.ptr;
+	}
+	return arr;
+
+    }
+
+    public void addBefore(Node e, int x) {
+	if (head.data == e.data) {
+	    addFirst(x);
+	    traverse();
+	    return;
+	}
+
+	Node p = head;
+	Node temp = new Node();
+
+	while (p != null) {
+	    if (p.data == e.data) {
+		addAfter(temp, x);
+		traverse();
+		return;
+	    }
+	    temp = p;
+	    p = p.ptr;
+	}
+
+    }
+
+    public int max() {
+	Node p = head;
+	int max = Integer.MIN_VALUE;
+	while (p != null) {
+	    if (p.data > max) {
+		max = p.data;
+	    }
+	    p = p.ptr;
+	}
+	return max;
+    }
+
+    public int min() {
+	Node p = head;
+	int min = Integer.MAX_VALUE;
+	while (p != null) {
+	    if (p.data < min) {
+		min = p.data;
+	    }
+	    p = p.ptr;
+	}
+	return min;
+    }
+
+    public int sum() {
+	Node p = head;
+	int sum = 0;
+	while (p != null) {
+	    sum += p.data;
+	    p = p.ptr;
+	}
+	return sum;
+    }
+
+    public double avg() {
+	Node p = head;
+	int avg = 0;
+	int c = 0;
+	while (p != null) {
+	    avg += p.data;
+	    c++;
+	    p = p.ptr;
+	}
+	if (c == 0) return 0;
+	return avg / c;
+    }
+
+    public boolean SortedCheck() {
+	for (Node i = head; i != null && i.ptr != null; i = i.ptr) {
+	    for (Node j = i.ptr; j != null && j.ptr != null; j = j.ptr) {
+		if (i.data > j.data) { return false; }
+
+	    }
+	}
+
+	return true;
+    }
+
+    public void insert(int x) {
+	if (!SortedCheck()) {
+	    System.out.println("Node List haven't sorted!");
+	    return;
+	}
+	System.out.print("After inserted ");
+	Node p = head;
+	while (p != null) {
+	    if (p.data >= x) {
+		addBefore(p, x);
+		break;
+	    } else if (p.data <= x && p.ptr == null) {
+		addLast(x);
+		break;
+	    } else if (p.data < x && x < p.ptr.data) {
+		addAfter(p, x);
+		break;
+	    }
+	    p = p.ptr;
+	}
+
+    }
+
+    public void reverse() {
+	Node reverseNode = null;
+	Node current = head;
+	Node next = null;
+	while (current != null) {
+	    next = current.ptr; // luu gia tri cua current.ptr
+	    current.ptr = reverseNode; // day value ve ptr
+	    reverseNode = current; // set value next vao
+	    current = next; // reset gia tri cua current.ptr
+	}
+	head = reverseNode;
+	System.out.print("After reversed ");
+	traverse();
+    }
+
+    public void MergeLinkedList(CallLinkedList list) {
+	Node temp = list.head;
+	tail.ptr = temp;
+	tail = temp;
+	sort();
+	traverse();
+    }
+
+    public void MergerLinkedListToTail(CallLinkedList list) {
+	Node temp = list.head;
+	tail.ptr = temp;
+	tail = temp;
+
+	traverse();
+    }
+
+    public boolean checkLinkedListSameContent(CallLinkedList list) {
+	if (list.count() != count()) return false;
+	list.sort();
+	sort();
+
+	System.out.print("Old ");
+	traverse();
+	System.out.print("New ");
+	list.traverse();
+
+	for (Node i = head, j = list.head; (i != null && i.ptr != null)
+	                || (j != null && j.ptr != null); i = i.ptr, j = j.ptr) {
+
+	    if (i.data != j.data) return false;
+
+	}
+
+	return true;
+    }
+
+}

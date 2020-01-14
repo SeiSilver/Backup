@@ -1,0 +1,29 @@
+img {
+    display: none;
+}
+
+body {
+    font-size: 20px;
+}
+
+
+/* a {
+    text-decoration: none;
+    color: blue;
+} */
+
+div.main {
+    border-radius: 25px;
+    background-color: gray;
+    width: 70%;
+}
+
+div.progress {
+    border-radius: 25px;
+    background-color: lightgreen;
+    text-align: center;
+}
+
+nav a {
+    color: rgb(0, 0, 0);
+}

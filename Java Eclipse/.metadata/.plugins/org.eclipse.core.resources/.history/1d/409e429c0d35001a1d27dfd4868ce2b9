@@ -1,0 +1,115 @@
+package Core;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static Scanner sc = new Scanner(System.in);
+
+    public static void pause() {
+	System.out.println("\nPress Enter to continue.");
+	sc.nextLine();
+    }
+
+    public static void main(String[] args) {
+	// TODO Auto-generated method stub
+	Manager m = new Manager();
+
+	int choice = 0;
+	do {
+	    m.menu();
+	    choice = Validation.checkInt();
+	    switch (choice) {
+	    case 1:
+		m.addToHead();
+		break;
+	    case 2:
+		m.addToLast();
+		break;
+	    case 3:
+		m.AddAfter();
+		break;
+	    case 4:
+		m.MyList.traverse();
+		break;
+	    case 5:
+		m.deleteFromHead();
+		break;
+	    case 6:
+		m.deleteFromTail();
+		break;
+	    case 7:
+		m.DeleteAfter();
+		break;
+	    case 8:
+		m.deleteIfequal();
+		break;
+	    case 9:
+		m.Search();
+		break;
+
+	    case 10:
+		m.Count();
+
+		break;
+	    case 11:
+		m.DeleAt();
+		break;
+	    case 12:
+		m.Sort();
+		break;
+	    case 13:
+		m.DeleNode();
+		break;
+	    case 14:
+		m.ToArray();
+		break;
+	    case 15:
+
+		break;
+	    case 16:
+		m.AddBefore();
+		break;
+	    case 17:
+m.mergeLinkedListToTail();
+		break;
+	    case 18:
+		m.Max();
+		break;
+	    case 19:
+		m.Min();
+		break;
+
+	    case 20:
+		m.Sum();
+		break;
+
+	    case 21:
+		m.Avg();
+		break;
+	    case 22:
+		m.sortedcheck();
+		break;
+	    case 23:
+		m.Insert();
+		break;
+	    case 24:
+		m.Reverse();
+		break;
+	    case 25:
+
+		break;
+	    case 26:
+
+		break;
+
+	    default:
+		System.out.println("Invalid selection");
+		break;
+
+	    }
+	    if (choice != 26) pause();
+	} while (choice != 26);
+    }
+
+}

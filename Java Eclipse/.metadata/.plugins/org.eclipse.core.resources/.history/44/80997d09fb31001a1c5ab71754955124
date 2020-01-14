@@ -1,0 +1,49 @@
+package Core;
+
+class Node {
+    int data;
+    Node next;
+
+    public Node(int data) {
+	super();
+	this.data = data;
+	this.next = null;
+    }
+
+    public Node() {
+	this.next = null;
+    }
+
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+	// TODO Auto-generated method stub
+	Node nodeA = new Node(9);
+	Node nodeB = new Node(12);
+	Node nodeC = new Node(6);
+	Node nodeD = new Node(4);
+	Node nodeE = new Node(7);
+
+	CallLinkedList sllist = new CallLinkedList();
+	sllist.head = nodeA;
+	nodeA.next = nodeB;
+	nodeB.next = nodeC;
+	nodeC.next = nodeD;
+	nodeD.next = nodeE;
+//	nodeE.next = sllist.tail;
+//	sllist.tail = nodeE;
+
+	sllist.traverse();
+
+	sllist.deleteFirst();
+
+	sllist.traverse();
+	sllist.deleteLast();
+
+	sllist.traverse();
+
+    }
+
+}

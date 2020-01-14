@@ -1,0 +1,3 @@
+account1 XYZ 2000 VND
+
+account2 ABC 1000 VND

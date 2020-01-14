@@ -1,0 +1,105 @@
+package J1SP0064;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Scanner;
+
+public class Checkdataformat {
+
+    public static Scanner sc = new Scanner(System.in);
+
+    public void menu() {
+	System.out.println("======================= MENU =========================");
+	System.out.printf("| 1. %-47s |\n", "Check number");
+	System.out.printf("| 2. %-47s |\n", "Check email");
+	System.out.printf("| 3. %-47s |\n", "Check date");
+	System.out.println("======================================================");
+	System.out.print("Choose option: ");
+    }
+
+    public void numberCheck() {
+	while (true) {
+	    try {
+		System.out.print("Phone number: ");
+		int number = sc.nextInt();
+		String n = String.valueOf(number);
+		if (n.matches("\\d{10}")) {
+		    System.out.println("Phone number: " + n);
+		    return;
+		} else System.out.println("Phone number must be 10 digits");
+	    } catch (Exception e) {
+		sc.nextLine();
+		System.err.println("Phone number must is number");
+	    }
+
+	}
+    }
+
+    public void emailCheck() {
+	sc.nextLine();
+	while (true) {
+	    System.out.print("Email: ");
+	    String email = sc.nextLine();
+	    if (email.matches("(\\w+)@(\\w+).(\\w+)")) {
+		System.out.println("Email: " + email);
+		return;
+	    } else {
+		System.out.println("Email must is correct format");
+	    }
+	}
+    }
+
+    public void dateCheck() {
+	sc.nextLine();
+	while (true) {
+	    try {
+		System.out.print("Date: ");
+		String data = sc.nextLine();
+
+		Date d = new SimpleDateFormat("dd/MM/yyyy").parse(data);
+//		Date dt = d.;
+
+		System.out.println("Date: " + data);
+		return;
+	    } catch (Exception e) {
+		// TODO: handle exception
+		System.out.println("Date to correct format(dd/MM/yyyy).");
+	    }
+
+	}
+    }
+
+    public static void main(String[] args) {
+	// TODO Auto-generated method stub
+	Checkdataformat M = new Checkdataformat();
+	int choice = 0;
+	do {
+	    M.menu();
+
+	    try {
+		choice = sc.nextInt();
+	    } catch (Exception e) {
+		sc.nextLine();
+	    }
+
+	    switch (choice) {
+	    case 1:
+		M.numberCheck();
+		break;
+	    case 2:
+		M.emailCheck();
+		break;
+	    case 3:
+		M.dateCheck();
+		break;
+	    case 4:
+		break;
+	    default:
+		System.out.println("Invalid selection");
+		break;
+
+	    }
+	} while (choice != 4);
+
+    }
+}

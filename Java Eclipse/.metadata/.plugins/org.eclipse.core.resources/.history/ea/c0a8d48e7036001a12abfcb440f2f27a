@@ -1,0 +1,17 @@
+package MyLinkedList;
+
+class Node {
+    String data;
+    Node ptr;
+
+    public Node(String data) {
+	super();
+	this.data = data;
+	this.ptr = null;
+    }
+
+    public Node() {
+	this.ptr = null;
+    }
+
+}

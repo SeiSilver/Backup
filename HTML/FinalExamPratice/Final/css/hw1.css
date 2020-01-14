@@ -1,0 +1,114 @@
+header {
+    text-align: center;
+    background-image: url("../images/header.jpg");
+    background-size: cover;
+    padding: 4%;
+}
+
+header h1 {
+    color: rgb(228, 137, 18);
+    text-align: center;
+    font-size: 50px;
+    text-transform: uppercase;
+}
+
+header nav {
+    border-radius: 10px;
+    text-align: center;
+}
+
+header nav a {
+    text-align: center;
+    background-color: rgba(194, 194, 182, 0.897);
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 15px 50px 15px 50px;
+    margin: 10px;
+    color: rgb(28, 177, 177);
+    border-radius: 10px;
+}
+
+nav a.active {
+    background-color: rgba(230, 179, 40, 0.897);
+    color: rgba(143, 114, 34, 0.897);
+}
+
+.left {
+    float: left;
+    width: 20%;
+    height: 100vh;
+    background-color: rgb(243, 186, 81);
+    text-align: center;
+    padding-top: 2%;
+}
+
+.left a img {
+    border: 5px solid rgb(231, 26, 26);
+    width: 50%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    margin-bottom: 1cm;
+    margin-top: 1cm;
+}
+
+.right {
+    width: 69%;
+    float: left;
+    margin: 20px;
+    display: block;
+    padding: 2%;
+}
+
+.right h2 {
+    color: rgb(26, 153, 153);
+}
+
+table {
+    font-family: "Times New Roman", Arial, Helvetica, sans-serif, serif;
+    vertical-align: middle;
+    font-size: 16px;
+    width: 65%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+table th {
+    font-weight: bold;
+    background-color: rgb(233, 120, 79);
+    text-align: center;
+    padding: 16px;
+    border-radius: 3px;
+}
+
+table td {
+    text-align: center;
+    background-color: rgb(243, 207, 140);
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    color: rgb(28, 177, 177);
+    font-weight: bold;
+}
+
+tr th:first-child,
+tr td:first-child {
+    text-align: left;
+}
+
+ul a {
+    color: rgb(248, 18, 18);
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+tr:hover {
+    opacity: 1.5;
+    transition: 1s;
+}
+
+tr {
+    opacity: 0.7;
+}

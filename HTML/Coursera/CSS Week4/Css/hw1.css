@@ -1,0 +1,129 @@
+body {
+    padding: 10px;
+    margin: 10PX;
+}
+
+header {
+    font-size: 20px;
+    background-color: rgb(36, 151, 228);
+    background-image: url("http://intro-webdesign.com/CSS/assignment-2/images/flywheel.jpg");
+    background-repeat: no-repeat;
+    padding: 10px;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    color: #000000;
+    text-transform: uppercase;
+    font-size: 45px;
+}
+
+h2 {
+    text-align: left;
+    font-size: 30px;
+}
+
+section p {
+    text-align: left;
+}
+
+link nav {
+    background-color: rgb(37, 168, 37);
+    /* text-align: center; */
+    text-decoration: none;
+    display: block;
+    border-radius: 10px;
+    margin-right: 150px;
+    padding: 25px 50px 75px 100px;
+    text-align: center;
+}
+
+nav a {
+    color: #8f8a8a;
+    width: 15%;
+    padding: 10px 30px;
+    margin: 10px;
+    /* text-align: center; */
+    text-decoration: none;
+    background-color: #ffffff;
+    display: inline-block;
+    text-align: center;
+}
+
+nav a.active {
+    background-color: rgb(38, 129, 129);
+    width: 15%;
+    padding: 10px 30px;
+    margin: 10px;
+    text-align: center;
+}
+
+.left {
+    width: 20%;
+    float: left;
+    height: 100vh;
+    margin: 0 auto;
+    background-color: rgb(41, 21, 221);
+    display: block;
+    text-align: center;
+}
+
+.right {
+    width: 75%;
+    float: left;
+    height: 10px;
+    margin: 15px;
+    background-color: #000000;
+    /* text-align: center; */
+    display: block;
+}
+
+section {
+    display: inline;
+}
+
+img {
+    border: 2px solid rgb(193, 236, 37);
+    /* margin: 0 auto; */
+    width: 80%;
+    /* padding: 30px 20px 30px 30px; */
+    text-align: center;
+    /* height: 20px; */
+}
+
+table {
+    font-family: "Times New Roman", Arial, Helvetica, sans-serif, serif;
+    vertical-align: middle;
+    font-size: 16px;
+    width: 100%;
+}
+
+table th {
+    font-weight: bold;
+    background-color: rgb(24, 185, 29);
+    text-align: center;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+table td {
+    text-align: center;
+    background-color: rgb(47, 201, 218);
+    color: rgb(0, 0, 0);
+    padding: 10px;
+}
+
+tr th:first-child,
+tr td:first-child {
+    text-align: left;
+}
+
+tr:hover {
+    opacity: 1.5;
+    transition: 1s;
+}
+
+tr {
+    opacity: 0.7;
+}
